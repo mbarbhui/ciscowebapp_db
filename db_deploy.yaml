@@ -12,7 +12,7 @@ spec:
     matchLabels:
       app: mbarbhuidb
   strategy: {}
-  template:
+  template:  #pod template
     metadata:
       creationTimestamp: null
       labels:
@@ -23,5 +23,19 @@ spec:
         name: mysql
         ports:
         - containerPort: 3306
+        envFrom: # to call environment variable from config map
+        - configMapRef:
+            name: mbarbhuidb-config # name of configMap
+        env: # calling other env from secrets
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mbarbhuidb-sec
+              key: db_pass
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mbarbhuidb-sec
+              key: root_pass
         resources: {}
 status: {}
