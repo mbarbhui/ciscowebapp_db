@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: mbarbhuiwebapp
+  name: mbarbhuiwebapp
+  namespace: mbarbhui-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mbarbhuiwebapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mbarbhuiwebapp
+    spec:
+      containers:
+      - image: wordpress
+        name: wordpress
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
