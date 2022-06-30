@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: mbarbhuidb
+  name: mbarbhuidb
+  namespace: mbarbhui-ns
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mbarbhuidb
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: mbarbhuidb
+    spec:
+      containers:
+      - image: mysql:5.7
+        name: mysql
+        ports:
+        - containerPort: 3306
+        resources: {}
+status: {}
