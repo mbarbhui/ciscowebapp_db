@@ -45,5 +45,5 @@ spec:
         resources: {}
         volumeMounts: # to mount on the volume created above
         - name: mbarbhuidbvol
-          mounthPath: /var/lib/mysql
+          mountPath: /var/lib/mysql
 status: {}
