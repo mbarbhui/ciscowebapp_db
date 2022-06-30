@@ -12,7 +12,7 @@ spec:
     matchLabels:
       app: mbarbhuiwebapp
   strategy: {}
-  template:
+  template: #pod info
     metadata:
       creationTimestamp: null
       labels:
@@ -23,5 +23,14 @@ spec:
         name: wordpress
         ports:
         - containerPort: 80
+        envFrom: #calling docker image env var
+        - configMapRef:
+            name: mbarbhuiweb-config
+        env:
+        - name: WORDPRESS_DB_PASSWORD
+          valueFrom: #taking data from secret
+          secretKeyRef:
+            name: mbarbhuidb-sec
+            key: db_pass
         resources: {}
 status: {}
