@@ -29,8 +29,8 @@ spec:
         env:
         - name: WORDPRESS_DB_PASSWORD
           valueFrom: #taking data from secret
-          secretKeyRef:
-            name: mbarbhuidb-sec
-            key: db_pass
+            secretKeyRef:
+              name: mbarbhuidb-sec
+              key: db_pass
         resources: {}
 status: {}
