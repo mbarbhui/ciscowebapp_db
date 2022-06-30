@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: mbarbhuidb
+  name: mbarbhuidb
+  namespace: mbarbhui-ns
+spec:
+  ports:
+  - name: 3306-3306
+    port: 3306
+    protocol: TCP
+    targetPort: 3306
+  selector: # will create end point using lable of pods
+    app: mbarbhuidb
+  type: ClusterIP
+status:
+  loadBalancer: {}
