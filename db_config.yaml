@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  MYSQL_DATABASE: mbarbhuidb
+  MYSQL_USER: mbarbhuiuser
+  MYSQL_PASSWORD: "Cisco123456#"
+  MYSQL_ROOT_PASSWORD: "Root@123456#"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: mbarbhui-config
+  namespace: mbarbhui-ns
