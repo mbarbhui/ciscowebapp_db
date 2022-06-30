@@ -5,5 +5,5 @@ data:
 kind: ConfigMap
 metadata:
   creationTimestamp: null
-  name: mbarbhui-config
+  name: mbarbhuidb-config
   namespace: mbarbhui-ns
